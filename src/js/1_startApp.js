@@ -1,7 +1,6 @@
 //ELEMENTS
 const charactersList = document.querySelector('.js_characters_list');
 let characters = [];
-let favouriteCharacters = [];
 
 //FUNCTIONS
 
@@ -26,7 +25,7 @@ function getAPIinfo() {
 //   return cardHtml;
 // }
 
-// //2. Paint Character Cards
+// //2. Paint Characters Cards
 // function paintCharactersCards(charactersArr) {
 //   let listHtml = '';
 //   for (let i = 0; i < charactersArr.length; i++) {
@@ -39,13 +38,19 @@ function getAPIinfo() {
 //1. Render Character Card
 function renderCharacterCard(characterObj) {
   const liEl = document.createElement('li');
+
   const articleEl = document.createElement('article');
+  articleEl.classList.add('js_card');
+  articleEl.setAttribute('data-id', characterObj.char_id);
+
   const imgEl = document.createElement('div');
   imgEl.setAttribute('style', `background-image:url('${characterObj.img}`);
   imgEl.classList.add('characters__img');
+
   const nameEl = document.createElement('h2');
   const nameContent = document.createTextNode(`${characterObj.name}`);
   nameEl.appendChild(nameContent);
+
   const statusEl = document.createElement('h3');
   const statusContent = document.createTextNode(`${characterObj.status}`);
   statusEl.appendChild(statusContent);
@@ -63,6 +68,7 @@ function paintCharactersCards(charactersArr) {
   for (let i = 0; i < charactersArr.length; i++) {
     charactersList.appendChild(renderCharacterCard(charactersArr[i]));
   }
+  cardListener();
 }
 
 getAPIinfo();
