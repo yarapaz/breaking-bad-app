@@ -7,37 +7,31 @@ let favouriteCharacters = [];
 
 //Get API info
 function getAPIinfo() {
-  fetch('https://www.breakingbadapi.com/api/characters/', {
+  fetch('https://www.breakingbadapi.com/api/characters', {
     method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
   })
     .then((response) => response.json())
     .then((data) => {
       characters = data;
+      paintCharactersCards(characters);
     });
 }
 
 //Render Character Card
-function renderCharacterCard(character) {
-  //Li + article + div / h2 / h3
-  const liEl = document.createElement('li');
-  const articleEl = document.createElement('article');
-
-  const imgEl = document.createElement('div');
-  imgEl.style = `background-image: ${character.img}`;
-
-  const nameEl = document.createElement('h2');
-  const nameContent = document.createTextNode(`${character.name}`);
-  nameEl.appendChild(nameContent);
-
-  const statusEl = document.createElement('h3');
-  const statusContent = document.createTextNode(`${character.status}`);
-  statusEl.appendChild(statusContent);
-
-  articleEl.appendChild(imgEl);
-  articleEl.appendChild(nameEl);
-  articleEl.appendChild(statusEl);
-  liEl.appendChild(articleEl);
+function renderCharacterCard(characterObj) {
+  let cardHtml = '';
+  cardHtml = `<li><article><div class="characters__box" style="background-image:url('${characterObj.img}')"></div><h2>${characterObj.name}</h2><h3>${characterObj.status}</h3></article></li>`;
+  console.log(cardHtml);
+  return cardHtml;
 }
 
-function paintCharactersCards() {}
+//Paint Character Cards
+function paintCharactersCards(charactersArr) {
+  let listHtml = '';
+  for (let i = 0; i < charactersArr.length; i++) {
+    listHtml += renderCharacterCard(charactersArr[i]);
+  }
+  charactersList.innerHTML = listHtml;
+}
+
+getAPIinfo();
