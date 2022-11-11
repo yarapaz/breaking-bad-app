@@ -1,7 +1,9 @@
 .characters {
   &__list {
+    display: flex;
+    flex-wrap: wrap;
   }
-  &__box {
+  &__img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
