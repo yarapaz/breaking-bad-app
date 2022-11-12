@@ -1,0 +1,13 @@
+.favorites {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.selected {
+  background-color: rgb(227, 208, 171);
+}
+
+.collapsed {
+  display: none;
+}

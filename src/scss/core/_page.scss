@@ -3,3 +3,8 @@ body {
   height: 100vh;
   min-height: 500px;
 }
+
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+}

@@ -1,6 +1,7 @@
 //ELEMENTS
 const charactersList = document.querySelector('.js_characters_list');
 let characters = [];
+let favoriteCharacters = [];
 
 //FUNCTIONS
 
@@ -12,10 +13,11 @@ function getAPIinfo() {
     .then((response) => response.json())
     .then((data) => {
       characters = data;
-      paintCharactersCards(characters);
+      getFromLocalStorage();
+      paintCharactersCards();
     });
 }
-
+getAPIinfo();
 //InnerHTML way
 // //1. Render Character Card
 // function renderCharacterCard(characterObj) {
@@ -36,7 +38,7 @@ function getAPIinfo() {
 
 //Advanced DOM way
 //1. Render Character Card
-function renderCharacterCard(characterObj) {
+function renderCard(characterObj) {
   const liEl = document.createElement('li');
 
   const articleEl = document.createElement('article');
@@ -63,12 +65,10 @@ function renderCharacterCard(characterObj) {
 }
 
 //2. Paint Characters Cards
-function paintCharactersCards(charactersArr) {
+function paintCharactersCards() {
   charactersList.innerHTML = '';
-  for (let i = 0; i < charactersArr.length; i++) {
-    charactersList.appendChild(renderCharacterCard(charactersArr[i]));
+  for (let i = 0; i < characters.length; i++) {
+    charactersList.appendChild(renderCard(characters[i]));
   }
   cardListener();
 }
-
-getAPIinfo();
