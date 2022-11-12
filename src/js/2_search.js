@@ -57,6 +57,8 @@ function handleSearch(ev) {
 searchBtn.addEventListener('click', handleSearch);
 
 //Remove form default behaviour
-form.addEventListener('submit', (ev) => {
-  ev.preventDefault();
-});
+for (const form of forms) {
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+  });
+}

@@ -1,5 +1,7 @@
+//ELEMENTS
+
 //REMOVE FAVS FUNCTIONS
-function handleRemoval(ev) {
+function handleRemove(ev) {
   const clickedCrossId = parseInt(ev.currentTarget.dataset.id);
   const objectIndex = favoriteCharacters.findIndex(
     (eachCharacter) => eachCharacter.char_id === clickedCrossId
@@ -15,10 +17,18 @@ function handleRemoval(ev) {
   }
 }
 
+function handleRemoveAll() {
+  favoriteCharacters = [];
+  favsSection.classList.add('collapsed');
+  localStorage.removeItem('Favorites');
+}
+
 //REMOVE FAVS EVENTS
 function removeCardListener() {
   const removeIcons = document.querySelectorAll('.js_remove_fav');
   removeIcons.forEach((icon) => {
-    icon.addEventListener('click', handleRemoval);
+    icon.addEventListener('click', handleRemove);
   });
 }
+console.log(resetBtn);
+resetBtn.addEventListener('click', handleRemoveAll);

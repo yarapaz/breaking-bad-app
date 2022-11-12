@@ -52,7 +52,6 @@ function handleSelection(ev) {
   const selectedCard = characters.find(
     (eachCharacter) => eachCharacter.char_id === clickedCardId
   );
-  console.log(favoriteCharacters);
   const foundCardIndex = favoriteCharacters.findIndex(
     (eachCard) => eachCard.char_id === clickedCardId
   );
@@ -62,7 +61,6 @@ function handleSelection(ev) {
     setInLocalStorage(favoriteCharacters);
   } else {
     if (favoriteCharacters.length > 1) {
-      console.log(favoriteCharacters.length);
       favoriteCharacters.splice(foundCardIndex, 1);
       paintFavCharacters();
       setInLocalStorage(favoriteCharacters);
