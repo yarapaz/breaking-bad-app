@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/main.css " />
 </head>
 
@@ -18,14 +21,15 @@
             <button class="js_search_btn">Search</button>
         </form>
     </header>
-    <main>
-        <h1>Characters</h1>
+    <main class="main">
         <section class="characters js_characters">
+            <h2>Characters<i class="fa-solid fa-heart"></i></h2>
             <ul class="characters__list js_characters_list"></ul>
         </section>
-        <aside class="section_favourites js_section_favourites">
-
-        </aside>
+        <section class="favorites js_favorites collapsed">
+            <h2>Favorites<i class="fa-solid fa-heart"></i></h2>
+            <ul class="js_favorites_list"></ul>
+        </section>
     </main>
     <footer>
         <small>Breaking Bad is regarded as one of the greatest television series of all time, and with 16 Primetime Emmy
