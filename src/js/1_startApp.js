@@ -1,8 +1,3 @@
-//ELEMENTS
-const charactersList = document.querySelector('.js_characters_list');
-let characters = [];
-let favoriteCharacters = [];
-
 //FUNCTIONS
 
 //Get API info
@@ -14,30 +9,32 @@ function getAPIinfo() {
     .then((data) => {
       characters = data;
       getFromLocalStorage();
-      paintCharactersCards();
+      paintCharactersCards(characters);
     });
 }
-getAPIinfo();
-//InnerHTML way
-// //1. Render Character Card
+
+//Render character card & paint characters cards
+
+// 1. InnerHTML method
+// 1.1. Render Character Card
 // function renderCharacterCard(characterObj) {
 //   let cardHtml = '';
-//   cardHtml = `<li><article><div class="characters__img" style="background-image:url('${characterObj.img}')"></div><h2>${characterObj.name}</h2><h3>${characterObj.status}</h3></article></li>`;
-//   console.log(cardHtml);
+//   cardHtml = `<li><article class="js_card" data-id="${characterObj.char_id}"><div class="characters__img" style="background-image:url('${characterObj.img}')"></div><h2>${characterObj.name}</h2><h3>${characterObj.status}</h3></article></li>`;
 //   return cardHtml;
 // }
 
-// //2. Paint Characters Cards
-// function paintCharactersCards(charactersArr) {
+// 1.2. Paint Characters Cards
+// function paintCharactersCards(cardsArray) {
 //   let listHtml = '';
-//   for (let i = 0; i < charactersArr.length; i++) {
-//     listHtml += renderCharacterCard(charactersArr[i]);
+//   for (let i = 0; i < cardsArray.length; i++) {
+//     listHtml += renderCharacterCard(cardsArray[i]);
 //   }
 //   charactersList.innerHTML = listHtml;
+//   cardListener();
 // }
 
-//Advanced DOM way
-//1. Render Character Card
+// 2. Advanced DOM method
+// 2.1. Render Character Card
 function renderCard(characterObj) {
   const liEl = document.createElement('li');
 
@@ -64,11 +61,16 @@ function renderCard(characterObj) {
   return liEl;
 }
 
-//2. Paint Characters Cards
-function paintCharactersCards() {
+// 2.2. Paint Characters Cards
+function paintCharactersCards(cardsArray) {
   charactersList.innerHTML = '';
-  for (let i = 0; i < characters.length; i++) {
-    charactersList.appendChild(renderCard(characters[i]));
+  for (let i = 0; i < cardsArray.length; i++) {
+    charactersList.appendChild(renderCard(cardsArray[i]));
   }
   cardListener();
 }
+
+//EVENTS
+
+//Get info from API and LS when page refreshes
+getAPIinfo();

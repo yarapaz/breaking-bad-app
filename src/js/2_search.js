@@ -1,22 +1,18 @@
-//Elements
-const form = document.querySelector('.js_form');
-const searchInput = document.querySelector('.js_search_input');
-const searchBtn = document.querySelector('.js_search_btn');
-let searchedCharacters = [];
+//FUNCTIONS
 
-//Functions
-//1. Filter way (faster)
+//HandleSearch
+
+//1. Filter method
 function handleSearch(ev) {
   ev.preventDefault();
   const inputValue = searchInput.value.toLowerCase();
   const searchedCharacters = characters.filter((eachCharacter) =>
     eachCharacter.name.toLowerCase().includes(inputValue)
   );
-  console.log(searchedCharacters);
   paintCharactersCards(searchedCharacters);
 }
 
-//2.Fetch way (slower)
+//2. Fetch method
 // function handleSearch(ev) {
 //   ev.preventDefault();
 //   const inputValue = searchInput.value.toLowerCase();
@@ -28,8 +24,11 @@ function handleSearch(ev) {
 //     });
 // }
 
-//Events
+//EVENTS
+//Add click event to search button
 searchBtn.addEventListener('click', handleSearch);
+
+//Remove form default behaviour
 form.addEventListener('submit', (ev) => {
   ev.preventDefault();
 });

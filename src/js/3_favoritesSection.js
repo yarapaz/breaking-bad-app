@@ -1,9 +1,8 @@
 'use strict';
-//Elements
-const favsSection = document.querySelector('.js_favorites');
-const favsList = document.querySelector('.js_favorites_list');
 
-//Function
+//FUNCTIONS
+
+//Paint fav characters
 function paintFavCharacters() {
   favsList.innerHTML = '';
   favsSection.classList.remove('collapsed');
@@ -12,6 +11,7 @@ function paintFavCharacters() {
   }
 }
 
+//Render fav characters cards
 function renderFavCard(characterObj) {
   const liEl = document.createElement('li');
 
@@ -19,6 +19,9 @@ function renderFavCard(characterObj) {
   articleEl.classList.add('js_card');
   articleEl.classList.add('selected');
   articleEl.setAttribute('data-id', characterObj.char_id);
+
+  const crossEl = document.createElement('p');
+  const crossContent = document.create;
 
   const imgEl = document.createElement('div');
   imgEl.setAttribute('style', `background-image:url('${characterObj.img}`);
@@ -39,6 +42,7 @@ function renderFavCard(characterObj) {
   return liEl;
 }
 
+//Handle card selection
 function handleSelection(ev) {
   const clickedCardId = parseInt(ev.currentTarget.dataset.id);
   const selectedCard = characters.find(
@@ -52,9 +56,21 @@ function handleSelection(ev) {
   setInLocalStorage(favoriteCharacters);
 }
 
-//Events
+//EVENTS
 
-//1. Manipulating ordinary Array
+//Add click events to cards
+
+//1. InnerHtml method
+// function cardListener() {
+//     const cards = document.querySelectorAll('.js_card');
+//     for (const card of cardsArray) {
+//       card.addEventListener('click', handleSelection);
+//     }
+//   }
+
+//2. Advanced DOM method
+
+//2.1. Manipulate ordinary Array
 // function cardListener() {
 //   const cards = document.querySelectorAll('.js_card');
 //   const cardsArray = Array.from(cards);
@@ -63,7 +79,7 @@ function handleSelection(ev) {
 //   }
 // }
 
-//2. Manipulating NodeList
+//2.2. Manipulate NodeList
 function cardListener() {
   const cards = document.querySelectorAll('.js_card');
   cards.forEach((card) => {
