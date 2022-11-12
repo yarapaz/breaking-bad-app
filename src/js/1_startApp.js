@@ -1,6 +1,7 @@
 //START-APP FUNCTIONS
 
 //Get API info
+console.log(favoriteCharacters);
 function getAPIinfo() {
   fetch('https://www.breakingbadapi.com/api/characters', {
     method: 'GET',
@@ -69,7 +70,7 @@ function paintCharactersCards(cardsArray) {
   for (let i = 0; i < cardsArray.length; i++) {
     charactersList.appendChild(renderCard(cardsArray[i]));
   }
-  cardListener();
+  selectCardListener();
 }
 
 //START-APP EVENTS

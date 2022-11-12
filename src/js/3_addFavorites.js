@@ -1,15 +1,6 @@
 'use strict';
 
-//FAV-SECTION FUNCTIONS
-
-//Paint fav characters
-function paintFavCharacters() {
-  favsList.innerHTML = '';
-  favsSection.classList.remove('collapsed');
-  for (const fav of favoriteCharacters) {
-    favsList.appendChild(renderFavCard(fav));
-  }
-}
+//ADD FAVS FUNCTIONS
 
 //Render fav characters cards
 function renderFavCard(characterObj) {
@@ -18,10 +9,12 @@ function renderFavCard(characterObj) {
   const articleEl = document.createElement('article');
   articleEl.classList.add('js_card');
   articleEl.classList.add('selected');
-  articleEl.setAttribute('data-id', characterObj.char_id);
 
   const crossEl = document.createElement('p');
-  const crossContent = document.create;
+  const crossContent = document.createTextNode('x');
+  crossEl.appendChild(crossContent);
+  crossEl.classList.add('js_remove_fav');
+  crossEl.setAttribute('data-id', characterObj.char_id);
 
   const imgEl = document.createElement('div');
   imgEl.setAttribute('style', `background-image:url('${characterObj.img}`);
@@ -35,11 +28,22 @@ function renderFavCard(characterObj) {
   const statusContent = document.createTextNode(`${characterObj.status}`);
   statusEl.appendChild(statusContent);
 
+  articleEl.appendChild(crossEl);
   articleEl.appendChild(imgEl);
   articleEl.appendChild(nameEl);
   articleEl.appendChild(statusEl);
   liEl.appendChild(articleEl);
   return liEl;
+}
+
+//Paint fav characters
+function paintFavCharacters() {
+  favsList.innerHTML = '';
+  favsSection.classList.remove('collapsed');
+  for (const fav of favoriteCharacters) {
+    favsList.appendChild(renderFavCard(fav));
+  }
+  removeCardListener();
 }
 
 //Handle card selection
@@ -48,15 +52,29 @@ function handleSelection(ev) {
   const selectedCard = characters.find(
     (eachCharacter) => eachCharacter.char_id === clickedCardId
   );
-  favoriteCharacters.push(selectedCard);
-  // const clickedCardIndex = favoriteCharacters.findIndex(
-  //   (eachCharacter) => eachCharacter.char_id === clickedCardId
-  // );
-  paintFavCharacters();
-  setInLocalStorage(favoriteCharacters);
+  console.log(favoriteCharacters);
+  const foundCardIndex = favoriteCharacters.findIndex(
+    (eachCard) => eachCard.char_id === clickedCardId
+  );
+  if (foundCardIndex === -1) {
+    favoriteCharacters.push(selectedCard);
+    paintFavCharacters();
+    setInLocalStorage(favoriteCharacters);
+  } else {
+    if (favoriteCharacters.length > 1) {
+      console.log(favoriteCharacters.length);
+      favoriteCharacters.splice(foundCardIndex, 1);
+      paintFavCharacters();
+      setInLocalStorage(favoriteCharacters);
+    } else {
+      favoriteCharacters.splice(foundCardIndex, 1);
+      favsSection.classList.add('collapsed');
+      localStorage.removeItem('Favorites');
+    }
+  }
 }
 
-//FAV-SECTION EVENTS
+//ADD FAVS EVENTS
 
 //Add click events to cards
 
@@ -80,7 +98,7 @@ function handleSelection(ev) {
 // }
 
 //2.2. Manipulate NodeList
-function cardListener() {
+function selectCardListener() {
   const cards = document.querySelectorAll('.js_card');
   cards.forEach((card) => {
     card.addEventListener('click', handleSelection);
