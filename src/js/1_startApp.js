@@ -1,7 +1,6 @@
 //START-APP FUNCTIONS
 
 //Get API info
-console.log(favoriteCharacters);
 function getAPIinfo() {
   fetch('https://www.breakingbadapi.com/api/characters', {
     method: 'GET',

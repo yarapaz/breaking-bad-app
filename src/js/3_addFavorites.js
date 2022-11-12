@@ -69,7 +69,7 @@ function handleSelection(ev) {
     } else {
       favoriteCharacters.splice(foundCardIndex, 1);
       favsSection.classList.add('collapsed');
-      localStorage.removeItem('Favorites');
+      localStorage.removeItem('');
     }
   }
 }
