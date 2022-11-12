@@ -1,4 +1,4 @@
-//FUNCTIONS
+//START-APP FUNCTIONS
 
 //Get API info
 function getAPIinfo() {
@@ -16,6 +16,7 @@ function getAPIinfo() {
 //Render character card & paint characters cards
 
 // 1. InnerHTML method
+
 // 1.1. Render Character Card
 // function renderCharacterCard(characterObj) {
 //   let cardHtml = '';
@@ -34,6 +35,7 @@ function getAPIinfo() {
 // }
 
 // 2. Advanced DOM method
+
 // 2.1. Render Character Card
 function renderCard(characterObj) {
   const liEl = document.createElement('li');
@@ -70,7 +72,7 @@ function paintCharactersCards(cardsArray) {
   cardListener();
 }
 
-//EVENTS
+//START-APP EVENTS
 
 //Get info from API and LS when page refreshes
 getAPIinfo();

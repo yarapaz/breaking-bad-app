@@ -1,6 +1,6 @@
 'use strict';
 
-//FUNCTIONS
+//FAV-SECTION FUNCTIONS
 
 //Paint fav characters
 function paintFavCharacters() {
@@ -56,7 +56,7 @@ function handleSelection(ev) {
   setInLocalStorage(favoriteCharacters);
 }
 
-//EVENTS
+//FAV-SECTION EVENTS
 
 //Add click events to cards
 

@@ -1,3 +1,4 @@
+//LOCAL STORAGE FUNCTIONS
 function setInLocalStorage(favArray) {
   localStorage.setItem('Favorites', JSON.stringify(favArray));
 }

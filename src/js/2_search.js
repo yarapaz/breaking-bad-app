@@ -1,4 +1,4 @@
-//FUNCTIONS
+//SEARCH FUNCTIONS
 
 //HandleSearch
 
@@ -24,7 +24,8 @@ function handleSearch(ev) {
 //     });
 // }
 
-//EVENTS
+//SEARCH EVENTS
+
 //Add click event to search button
 searchBtn.addEventListener('click', handleSearch);
 
