@@ -1,4 +1,4 @@
-//START-APP FUNCTIONS
+//START-APP - FUNCTIONS
 
 //Get API info
 function getAPIinfo() {
@@ -72,7 +72,7 @@ function paintCharactersCards(cardsArray) {
   selectCardListener();
 }
 
-//START-APP EVENTS
+//START-APP - EVENTS
 
 //Get info from API and LS when page refreshes
 getAPIinfo();

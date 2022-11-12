@@ -1,4 +1,4 @@
-//SEARCH FUNCTIONS
+//SEARCH - FUNCTIONS
 
 //HandleSearch
 
@@ -51,12 +51,12 @@ function handleSearch(ev) {
 //     });
 // }
 
-//SEARCH EVENTS
+//SEARCH - EVENTS
 
 //Add click event to search button
 searchBtn.addEventListener('click', handleSearch);
 
-//Remove form default behaviour
+//Remove forms default behaviours
 for (const form of forms) {
   form.addEventListener('submit', (ev) => {
     ev.preventDefault();

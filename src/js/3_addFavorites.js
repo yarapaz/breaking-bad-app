@@ -1,8 +1,8 @@
 'use strict';
 
-//ADD FAVS FUNCTIONS
+//ADD FAVS - FUNCTIONS
 
-//Render fav characters cards
+//Render fav character card
 function renderFavCard(characterObj) {
   const liEl = document.createElement('li');
 
@@ -36,7 +36,7 @@ function renderFavCard(characterObj) {
   return liEl;
 }
 
-//Paint fav characters
+//Paint favs characters
 function paintFavCharacters() {
   favsList.innerHTML = '';
   favsSection.classList.remove('collapsed');
@@ -72,7 +72,7 @@ function handleSelection(ev) {
   }
 }
 
-//ADD FAVS EVENTS
+//ADD FAVS - EVENTS
 
 //Add click events to cards
 
