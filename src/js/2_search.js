@@ -26,6 +26,10 @@ function handleSearch(ev) {
     charactersList.innerHTML = '';
     for (let i = 0; i < favSearchedCharacters.length; i++) {
       charactersList.appendChild(renderCard(favSearchedCharacters[i]));
+      const selected = document.getElementById(
+        favSearchedCharacters[i].char_id
+      );
+      selected.classList.add('selected');
       const favIndex = searchedCharacters.findIndex(
         (eachSearchedCharacter) =>
           eachSearchedCharacter.char_id === favSearchedCharacters[i].char_id

@@ -44,6 +44,7 @@ function renderCard(characterObj) {
   const articleEl = document.createElement('article');
   articleEl.classList.add('js_card');
   articleEl.classList.add('characters__card');
+  articleEl.setAttribute('id', characterObj.char_id);
   articleEl.setAttribute('data-id', characterObj.char_id);
 
   const imgEl = document.createElement('div');
