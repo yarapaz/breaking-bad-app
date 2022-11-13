@@ -21,6 +21,7 @@ function handleRemoveAll() {
   favoriteCharacters = [];
   favsSection.classList.add('collapsed');
   localStorage.removeItem('Favorites');
+  paintCharactersCards(characters);
 }
 
 //REMOVE FAVS - EVENTS

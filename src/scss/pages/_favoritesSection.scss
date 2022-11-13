@@ -11,7 +11,7 @@
   &__title {
     display: flex;
     gap: 6px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: $primary-color;
     font-weight: 600;
     font-size: rem(20);
@@ -67,7 +67,7 @@
   &__reset--btn {
     position: relative;
     right: 70px;
-    margin-top: 5px;
+    margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
     border: none;
@@ -76,6 +76,7 @@
     color: $secondary-color;
     font-weight: 500;
     font-family: $primary-font;
+    box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
     cursor: pointer;
     &:hover {
       background-color: rgb(235, 193, 110);

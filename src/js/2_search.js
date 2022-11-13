@@ -10,7 +10,6 @@ function handleSearch(ev) {
     eachCharacter.name.toLowerCase().includes(inputValue)
   );
 
-  let favSearchedCharacters = [];
   for (let i = 0; i < favoriteCharacters.length; i++) {
     let favCharacter = searchedCharacters.find(
       (eachCharacter) => eachCharacter.char_id === favoriteCharacters[i].char_id
@@ -39,8 +38,8 @@ function handleSearch(ev) {
     for (let i = 0; i < searchedCharacters.length; i++) {
       charactersList.appendChild(renderCard(searchedCharacters[i]));
     }
+    selectCardListener();
   }
-  selectCardListener();
 }
 
 //2. Fetch method (without fav cards adjustment)

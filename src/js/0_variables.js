@@ -13,3 +13,4 @@ const resetBtn = document.querySelector('.js_reset_btn');
 let characters = [];
 let favoriteCharacters = [];
 let searchedCharacters = [];
+let favSearchedCharacters = [];
