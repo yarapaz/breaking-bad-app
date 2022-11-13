@@ -25,7 +25,7 @@ function handleSearch(ev) {
   } else if (favSearchedCharacters.length !== 0) {
     charactersList.innerHTML = '';
     for (let i = 0; i < favSearchedCharacters.length; i++) {
-      charactersList.appendChild(renderFavCard(favSearchedCharacters[i]));
+      charactersList.appendChild(renderCard(favSearchedCharacters[i]));
       const favIndex = searchedCharacters.findIndex(
         (eachSearchedCharacter) =>
           eachSearchedCharacter.char_id === favSearchedCharacters[i].char_id
