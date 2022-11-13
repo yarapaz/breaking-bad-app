@@ -8,6 +8,10 @@
     <meta name="robots" content="index, follow">
     <meta name="description" content="Breaking Bad lovers... this is your app!">
     <title>Breaking Bad App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,32 +19,9 @@
 </head>
 
 <body class="body">
-    <header>
-        <form class="js_form" action="">
-            <label for="searchInput" hidden></label>
-            <input class="js_search_input" type="text" name="searchInput" id="searchInput"
-                placeholder="Example: Walter White">
-            <button class="js_search_btn">Search</button>
-        </form>
-    </header>
-    <main class="main">
-        <h1 class="collapsed">Breaking Bad App</h1>
-        <section class="characters js_characters">
-            <h2>Characters</h2><i class="fa-solid fa-heart"></i>
-            <ul class="characters__list js_characters_list"></ul>
-        </section>
-        <section class="favorites js_favorites collapsed">
-            <h2>Favorites</h2><i class="fa-solid fa-heart"></i>
-            <ul class="js_favorites_list"></ul>
-            <form class="js_form" action="">
-                <button class="js_reset_btn">Reset</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <small>Breaking Bad is regarded as one of the greatest television series of all time, and with 16 Primetime Emmy
-            Awards &copy; Adalab 2022</small>
-    </footer>
+    <include src="./partials/header.html"></include>
+    <include src="./partials/main.html"></include>
+    <include src="./partials/footer.html"></include>
     <script src="./assets/js/main.js"></script>
 </body>
 

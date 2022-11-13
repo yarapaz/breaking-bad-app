@@ -1,8 +1,12 @@
-// @import 'core/variables';
+@import 'core/variables';
 @import 'core/reset';
-@import 'core/page';
+@import 'core/rems';
+@import 'layout/page';
+@import 'layout/header';
+@import 'layout/footer';
 @import 'pages/charactersSection';
 @import 'pages/favoritesSection';
+
 // @import 'components/links';
 // @import 'layout/page';
 // @import 'layout/header';

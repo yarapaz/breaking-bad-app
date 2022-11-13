@@ -1,13 +1,59 @@
 .characters {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8%;
+  margin-right: 5%;
+  margin-left: 8%;
+  &__title {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+    color: $primary-color;
+    font-weight: 600;
+    font-size: rem(20);
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
+  }
+  &__card {
+    width: 250px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    grid-gap: 7px;
+    box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
   }
   &__img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 200px;
-    height: 300px;
+    width: 170px;
+    height: 250px;
+    margin-top: 20px;
   }
+  &__name {
+    color: rgb(98, 96, 96);
+    font-weight: 800;
+    margin-top: 2px;
+  }
+  &__status {
+    font-weight: 600;
+    color: $subtitle-color;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+}
+
+.fa-heart {
+  font-size: rem(15);
+  transform: scaleY(0.8);
+  margin-top: 4px;
 }

@@ -9,23 +9,29 @@ function renderFavCard(characterObj) {
   const articleEl = document.createElement('article');
   articleEl.classList.add('js_card');
   articleEl.classList.add('selected');
+  articleEl.classList.add('favorites__card');
 
   const crossEl = document.createElement('p');
-  const crossContent = document.createTextNode('x');
-  crossEl.appendChild(crossContent);
+  const iconEl = document.createElement('i');
+  iconEl.classList.add('fa-solid');
+  iconEl.classList.add('fa-xmark');
+  crossEl.appendChild(iconEl);
   crossEl.classList.add('js_remove_fav');
+  crossEl.classList.add('favorites__cross--remove');
   crossEl.setAttribute('data-id', characterObj.char_id);
 
   const imgEl = document.createElement('div');
   imgEl.setAttribute('style', `background-image:url('${characterObj.img}`);
-  imgEl.classList.add('characters__img');
+  imgEl.classList.add('favorites__img');
 
   const nameEl = document.createElement('h2');
   const nameContent = document.createTextNode(`${characterObj.name}`);
+  nameEl.classList.add('favorites__name');
   nameEl.appendChild(nameContent);
 
   const statusEl = document.createElement('h3');
   const statusContent = document.createTextNode(`${characterObj.status}`);
+  statusEl.classList.add('favorites__status');
   statusEl.appendChild(statusContent);
 
   articleEl.appendChild(crossEl);

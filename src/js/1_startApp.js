@@ -39,9 +39,11 @@ function getAPIinfo() {
 // 2.1. Render Character Card
 function renderCard(characterObj) {
   const liEl = document.createElement('li');
+  liEl.classList.add('characters__list_item');
 
   const articleEl = document.createElement('article');
   articleEl.classList.add('js_card');
+  articleEl.classList.add('characters__card');
   articleEl.setAttribute('data-id', characterObj.char_id);
 
   const imgEl = document.createElement('div');
@@ -50,10 +52,12 @@ function renderCard(characterObj) {
 
   const nameEl = document.createElement('h2');
   const nameContent = document.createTextNode(`${characterObj.name}`);
+  nameEl.classList.add('characters__name');
   nameEl.appendChild(nameContent);
 
   const statusEl = document.createElement('h3');
   const statusContent = document.createTextNode(`${characterObj.status}`);
+  statusEl.classList.add('characters__status');
   statusEl.appendChild(statusContent);
 
   articleEl.appendChild(imgEl);
