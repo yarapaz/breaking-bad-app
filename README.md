@@ -1,4 +1,4 @@
-![Breaking Bad App](./docs/assets/images/Breaking_bad_app_screenshot.jpg)
+![Breaking Bad App](./docs/assets/images/header_banner.jpg)
 
 # This is the Breaking Bad App!
 
