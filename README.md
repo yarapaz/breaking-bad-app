@@ -8,7 +8,7 @@ Just by clicking on the Github Pages link attached above in the description you 
 
 ## What can I do?
 
-![Breaking Bad Screenshot](./docs/assets/images/breaking_bad_app_screenshot.jpg)
+![Breaking Bad Screenshot](./docs/assets/images/Breaking_bad_app_screenshot.jpg)
 
 - **See all characters and their status**: when loading the page you will be directly connected to the https://breakingbadapi.com/ that will show you on screen all Breaking Bad Characters, their names and their status.
 
