@@ -81,10 +81,12 @@ function paintCharacterList(cardArray) {
       charactersList.appendChild(renderCard(cardArray[i]));
     }
     for (let i = 0; i < favoriteCharacters.length; i++) {
-      const characterInFav = characters.find(
+      const characterInFav = cardArray.find(
         (character) => character.char_id === favoriteCharacters[i].char_id
       );
-      const characterHtml = document.getElementById(characterInFav.char_id);
+      const characterHtml = document.getElementById(
+        `${characterInFav.char_id}`
+      );
       characterHtml.classList.add('selected');
     }
     selectedCardListener();

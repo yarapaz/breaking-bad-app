@@ -6,7 +6,7 @@
 function handleSearch(ev) {
   ev.preventDefault();
   const inputValue = searchInput.value.toLowerCase();
-  const searchedCharacters = characters.filter((eachCharacter) =>
+  searchedCharacters = characters.filter((eachCharacter) =>
     eachCharacter.name.toLowerCase().includes(inputValue)
   );
   paintCharacterList(searchedCharacters);

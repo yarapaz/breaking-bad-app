@@ -5,7 +5,6 @@ function renderFavCard(characterObj) {
   const liEl = document.createElement('li');
 
   const articleEl = document.createElement('article');
-  articleEl.classList.add('js_card');
   articleEl.classList.add('selected');
   articleEl.classList.add('favorites__card');
 
@@ -13,10 +12,10 @@ function renderFavCard(characterObj) {
   const iconEl = document.createElement('i');
   iconEl.classList.add('fa-solid');
   iconEl.classList.add('fa-xmark');
-  crossEl.appendChild(iconEl);
   crossEl.classList.add('js_remove_fav');
   crossEl.classList.add('favorites__cross--remove');
   crossEl.setAttribute('data-id', characterObj.char_id);
+  crossEl.appendChild(iconEl);
 
   const imgEl = document.createElement('div');
   imgEl.setAttribute('style', `background-image:url('${characterObj.img}`);
@@ -42,10 +41,10 @@ function renderFavCard(characterObj) {
 
 //Paint favs characters
 function paintFavList() {
-  favsList.innerHTML = '';
   favsSection.classList.remove('collapsed');
-  for (const fav of favoriteCharacters) {
-    favsList.appendChild(renderFavCard(fav));
+  favsList.innerHTML = '';
+  for (let i = 0; i < favoriteCharacters.length; i++) {
+    favsList.appendChild(renderFavCard(favoriteCharacters[i]));
   }
   removeCardListener();
 }
@@ -63,16 +62,30 @@ function handleSelection(ev) {
     favoriteCharacters.push(selectedCard);
     paintFavList();
     setInLocalStorage(favoriteCharacters);
-    paintCharacterList(characters);
+    if (searchedCharacters.length === 0) {
+      paintCharacterList(characters);
+    } else {
+      paintCharacterList(searchedCharacters);
+    }
   } else {
     if (favoriteCharacters.length > 1) {
       favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
       paintFavList();
       setInLocalStorage(favoriteCharacters);
+      if (searchedCharacters.length === 0) {
+        paintCharacterList(characters);
+      } else {
+        paintCharacterList(searchedCharacters);
+      }
     } else {
       favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
       favsSection.classList.add('collapsed');
       localStorage.removeItem('Favorites');
+      if (searchedCharacters.length === 0) {
+        paintCharacterList(characters);
+      } else {
+        paintCharacterList(searchedCharacters);
+      }
     }
   }
 }
