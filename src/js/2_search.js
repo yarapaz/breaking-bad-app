@@ -12,6 +12,14 @@ function handleSearch(ev) {
   paintCharacterList(searchedCharacters);
 }
 
+function checkSearch() {
+  if (searchedCharacters.length === 0) {
+    paintCharacterList(characters);
+  } else {
+    paintCharacterList(searchedCharacters);
+  }
+}
+
 //2. Fetch method (without fav cards arrangement)
 // function handleSearch(ev) {
 //   ev.preventDefault();

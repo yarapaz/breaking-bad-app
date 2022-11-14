@@ -62,30 +62,18 @@ function handleSelection(ev) {
     favoriteCharacters.push(selectedCard);
     paintFavList();
     setInLocalStorage(favoriteCharacters);
-    if (searchedCharacters.length === 0) {
-      paintCharacterList(characters);
-    } else {
-      paintCharacterList(searchedCharacters);
-    }
+    checkSearch();
   } else {
     if (favoriteCharacters.length > 1) {
       favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
       paintFavList();
       setInLocalStorage(favoriteCharacters);
-      if (searchedCharacters.length === 0) {
-        paintCharacterList(characters);
-      } else {
-        paintCharacterList(searchedCharacters);
-      }
+      checkSearch();
     } else {
       favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
       favsSection.classList.add('collapsed');
       localStorage.removeItem('Favorites');
-      if (searchedCharacters.length === 0) {
-        paintCharacterList(characters);
-      } else {
-        paintCharacterList(searchedCharacters);
-      }
+      checkSearch();
     }
   }
 }

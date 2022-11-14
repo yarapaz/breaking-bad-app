@@ -84,10 +84,10 @@ function paintCharacterList(cardArray) {
       const characterInFav = cardArray.find(
         (character) => character.char_id === favoriteCharacters[i].char_id
       );
-      const characterHtml = document.getElementById(
-        `${characterInFav.char_id}`
-      );
-      characterHtml.classList.add('selected');
+      if (characterInFav !== undefined) {
+        const characterHtml = document.getElementById(characterInFav.char_id);
+        characterHtml.classList.add('selected');
+      }
     }
     selectedCardListener();
   }
@@ -97,3 +97,7 @@ function paintCharacterList(cardArray) {
 
 //Get info from API and LS when app starts
 getAPIinfo();
+
+home.addEventListener('click', () => {
+  paintCharacterList(characters);
+});

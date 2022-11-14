@@ -14,6 +14,8 @@ Just by clicking on the Github Pages link attached above in the description you 
 
 * **Find your favorites**: using the search engine at the top of the page you will be able to travel all around characters to find your favorite ones (if a character had already been chosen as a favorite it will show up as selected).
 
+* **Leave the search**: once you are done searching, just by clickin on the **"Breaking Bad"** logo on the header you will be redirected to the home page.
+
 * **Fill your favorites list**: clicking on characters you will be able to attach them to your favorites list to have them always on the spot. This list will be saved in your Local Storage showing you your favorites whenever you enter the page again and updating any changes you may make over the list.
 
 * **Change your mind**: whenever you decide a character lost its favorite condition you will be able to eliminate it from the list just by clicking again on its card on the right list or by clicking on the "x" button attached at the top of the character in the favorites list.
