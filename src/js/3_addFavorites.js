@@ -63,6 +63,7 @@ function handleSelection(ev) {
     favoriteCharacters.push(selectedCard);
     paintFavList();
     setInLocalStorage(favoriteCharacters);
+    paintCharacterList(characters);
   } else {
     if (favoriteCharacters.length > 1) {
       favoriteCharacters.splice(selectedCardIndexInFavArray, 1);

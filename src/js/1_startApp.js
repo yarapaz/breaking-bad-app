@@ -71,10 +71,24 @@ function renderCard(characterObj) {
 // 2.2. Paint Character Cards
 function paintCharacterList(cardArray) {
   charactersList.innerHTML = '';
-  for (let i = 0; i < cardArray.length; i++) {
-    charactersList.appendChild(renderCard(cardArray[i]));
+  if (favoriteCharacters.length === 0) {
+    for (let i = 0; i < cardArray.length; i++) {
+      charactersList.appendChild(renderCard(cardArray[i]));
+    }
+    selectedCardListener();
+  } else if (favoriteCharacters.length !== 0) {
+    for (let i = 0; i < cardArray.length; i++) {
+      charactersList.appendChild(renderCard(cardArray[i]));
+    }
+    for (let i = 0; i < favoriteCharacters.length; i++) {
+      const characterInFav = characters.find(
+        (character) => character.char_id === favoriteCharacters[i].char_id
+      );
+      const characterHtml = document.getElementById(characterInFav.char_id);
+      characterHtml.classList.add('selected');
+    }
+    selectedCardListener();
   }
-  selectedCardListener();
 }
 
 //START-APP - EVENTS
