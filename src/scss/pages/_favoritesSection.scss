@@ -1,29 +1,48 @@
 .favorites {
-  width: 30vw;
-  margin-top: 8%;
-  margin-left: 5%;
+  width: 100%;
+  margin-top: 4.5%;
+  margin-left: 1%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-bottom: 90px;
+  padding-bottom: 35px;
+  @include tablet {
+    width: 30vw;
+    margin-top: 13%;
+    margin-left: 3%;
+  }
+  @include desktop {
+    margin-top: 8%;
+    margin-left: 5%;
+    padding-bottom: 90px;
+  }
   &__title {
     display: flex;
     gap: 6px;
     margin-bottom: 20px;
     color: $primary-color;
     font-weight: 600;
-    font-size: rem(20);
+    font-size: rem(16);
+    @include desktop {
+      font-size: rem(20);
+    }
   }
   &__list {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    padding-right: 0.8%;
+    padding-left: 0.7%;
+    @include desktop {
+      flex-direction: column;
+    }
   }
   &__card {
-    width: 250px;
+    width: 150px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -31,42 +50,64 @@
     grid-gap: 7px;
     border-radius: 2px;
     box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
+    @include desktop {
+      width: 250px;
+    }
   }
   &__cross--remove {
     position: relative;
-    top: 15px;
-    left: 102px;
-    width: 20px;
-    padding: 3px 3.5px;
+    top: 75%;
+    left: 37%;
+    width: 15px;
+    height: 15px;
+    padding: 2px 2.5px;
     padding-bottom: 2px;
     text-align: center;
     background-color: rgba(171, 115, 11, 0.8);
     border-radius: 10px;
     color: rgb(242, 227, 199);
     cursor: pointer;
+    @include desktop {
+      padding: 3px 3.5px;
+      width: 20px;
+      height: 20px;
+      top: 60%;
+      left: 40%;
+    }
   }
   &__img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 170px;
-    height: 250px;
-    margin-top: 20px;
+    width: 100px;
+    height: 134px;
+    margin-top: 17px;
+    @include desktop {
+      margin-top: 20px;
+      width: 170px;
+      height: 250px;
+    }
   }
   &__name {
     color: rgb(98, 96, 96);
     font-weight: 800;
     margin-top: 2px;
+    font-size: rem(11);
+    @include desktop {
+      font-size: rem(16);
+    }
   }
   &__status {
     font-weight: 600;
     color: $subtitle-color;
     margin-top: 5px;
     margin-bottom: 15px;
+    font-size: rem(9);
+    @include desktop {
+      font-size: rem(16);
+    }
   }
   &__reset--btn {
-    position: relative;
-    right: 70px;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
@@ -76,10 +117,16 @@
     color: $secondary-color;
     font-weight: 500;
     font-family: $primary-font;
+    font-size: rem(12);
     box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
     cursor: pointer;
     &:hover {
       background-color: rgb(235, 193, 110);
+    }
+    @include tablet {
+    }
+    @include desktop {
+      font-size: rem(16);
     }
   }
 }
@@ -90,4 +137,21 @@
 
 .collapsed {
   display: none;
+}
+
+.fa-xmark {
+  font-size: rem(11);
+  position: relative;
+  bottom: 40%;
+  right: 34%;
+  padding: 5px 5px;
+  @include tablet {
+    bottom: 45%;
+    right: 32%;
+  }
+  @include desktop {
+    bottom: 40%;
+    right: 28%;
+    font-size: rem(16);
+  }
 }

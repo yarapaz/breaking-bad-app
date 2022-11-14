@@ -18,31 +18,32 @@ function handleSearch(ev) {
       favSearchedCharacters.push(favCharacter);
     }
   }
+
   if (favSearchedCharacters.length === 0) {
-    paintCharactersCards(searchedCharacters);
-    selectCardListener();
+    paintCharacterList(searchedCharacters);
+    selectedCardListener();
   } else if (favSearchedCharacters.length !== 0) {
     charactersList.innerHTML = '';
     for (let i = 0; i < favSearchedCharacters.length; i++) {
       charactersList.appendChild(renderCard(favSearchedCharacters[i]));
-      const selected = document.getElementById(
+      const cardInFav = document.getElementById(
         favSearchedCharacters[i].char_id
       );
-      selected.classList.add('selected');
-      const favIndex = searchedCharacters.findIndex(
+      cardInFav.classList.add('selected');
+      const cardInFavIndex = searchedCharacters.findIndex(
         (eachSearchedCharacter) =>
           eachSearchedCharacter.char_id === favSearchedCharacters[i].char_id
       );
-      searchedCharacters.splice(favIndex, 1);
+      searchedCharacters.splice(cardInFavIndex, 1);
     }
     for (let i = 0; i < searchedCharacters.length; i++) {
       charactersList.appendChild(renderCard(searchedCharacters[i]));
     }
-    selectCardListener();
+    selectedCardListener();
   }
 }
 
-//2. Fetch method (without fav cards adjustment)
+//2. Fetch method (without fav cards arrangement)
 // function handleSearch(ev) {
 //   ev.preventDefault();
 //   const inputValue = searchInput.value.toLowerCase();
@@ -59,7 +60,7 @@ function handleSearch(ev) {
 //Add click event to search button
 searchBtn.addEventListener('click', handleSearch);
 
-//Remove forms default behaviours
+//Remove form default behaviour
 for (const form of forms) {
   form.addEventListener('submit', (ev) => {
     ev.preventDefault();

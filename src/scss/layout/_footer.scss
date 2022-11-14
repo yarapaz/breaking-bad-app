@@ -1,16 +1,30 @@
 .footer {
   width: 100%;
-  height: 4vh;
+  height: 3vh;
   background-color: $primary-color;
   color: $secondary-color;
-
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 1;
   bottom: 0;
+  @include tablet {
+    height: 3.5vh;
+  }
+  @include desktop {
+    height: 4vh;
+  }
   &__copy {
-    font-size: rem(14);
+    font-size: rem(6);
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    @include tablet {
+      font-size: rem(10);
+    }
+    @include desktop {
+      font-size: rem(14);
+    }
   }
 }

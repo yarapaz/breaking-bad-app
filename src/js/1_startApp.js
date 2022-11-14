@@ -9,7 +9,7 @@ function getAPIinfo() {
     .then((data) => {
       characters = data;
       getFromLocalStorage();
-      paintCharactersCards(characters);
+      paintCharacterList(characters);
     });
 }
 
@@ -68,16 +68,16 @@ function renderCard(characterObj) {
   return liEl;
 }
 
-// 2.2. Paint Characters Cards
-function paintCharactersCards(cardsArray) {
+// 2.2. Paint Character Cards
+function paintCharacterList(cardArray) {
   charactersList.innerHTML = '';
-  for (let i = 0; i < cardsArray.length; i++) {
-    charactersList.appendChild(renderCard(cardsArray[i]));
+  for (let i = 0; i < cardArray.length; i++) {
+    charactersList.appendChild(renderCard(cardArray[i]));
   }
-  selectCardListener();
+  selectedCardListener();
 }
 
 //START-APP - EVENTS
 
-//Get info from API and LS when page refreshes
+//Get info from API and LS when app starts
 getAPIinfo();

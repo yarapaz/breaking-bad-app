@@ -1,27 +1,46 @@
 .characters {
-  width: 70vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 8%;
-  margin-right: 5%;
-  margin-left: 8%;
+  margin-top: 20%;
+  padding-bottom: 5%;
+  @include tablet {
+    margin-top: 13%;
+    padding-bottom: 8%;
+  }
+  @include desktop {
+    margin-top: 8%;
+    margin-right: 5%;
+    margin-left: 8%;
+  }
   &__title {
     display: flex;
     gap: 6px;
     margin-bottom: 15px;
     color: $primary-color;
     font-weight: 600;
-    font-size: rem(20);
+    font-size: rem(16);
+    @include desktop {
+      font-size: rem(20);
+    }
   }
   &__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
+    padding-right: 0.8%;
+    padding-left: 0.7%;
+    @include tablet {
+      padding-right: 2.5%;
+      padding-left: 0%;
+    }
   }
   &__card {
-    width: 250px;
+    width: 150px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -30,30 +49,48 @@
     box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
     border-radius: 2px;
     cursor: pointer;
+    @include desktop {
+      width: 250px;
+    }
   }
   &__img {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 170px;
-    height: 250px;
+    width: 100px;
+    height: 134px;
     margin-top: 20px;
+    @include desktop {
+      width: 170px;
+      height: 250px;
+    }
   }
   &__name {
     color: rgb(98, 96, 96);
     font-weight: 800;
     margin-top: 2px;
+    font-size: rem(11);
+    @include desktop {
+      font-size: rem(16);
+    }
   }
   &__status {
     font-weight: 600;
     color: $subtitle-color;
     margin-top: 5px;
     margin-bottom: 15px;
+    font-size: rem(9);
+    @include desktop {
+      font-size: rem(16);
+    }
   }
 }
 
 .fa-heart {
-  font-size: rem(15);
+  font-size: rem(12);
   transform: scaleY(0.8);
   margin-top: 4px;
+  @include desktop {
+    font-size: rem(15);
+  }
 }

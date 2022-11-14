@@ -7,6 +7,6 @@ function getFromLocalStorage() {
   const favListLS = JSON.parse(localStorage.getItem('Favorites'));
   if (favListLS !== null) {
     favoriteCharacters = favListLS;
-    paintFavCharacters();
+    paintFavList();
   }
 }

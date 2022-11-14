@@ -1,5 +1,3 @@
-'use strict';
-
 //ADD FAVS - FUNCTIONS
 
 //Render fav character card
@@ -43,7 +41,7 @@ function renderFavCard(characterObj) {
 }
 
 //Paint favs characters
-function paintFavCharacters() {
+function paintFavList() {
   favsList.innerHTML = '';
   favsSection.classList.remove('collapsed');
   for (const fav of favoriteCharacters) {
@@ -58,22 +56,22 @@ function handleSelection(ev) {
   const selectedCard = characters.find(
     (eachCharacter) => eachCharacter.char_id === clickedCardId
   );
-  const foundCardIndex = favoriteCharacters.findIndex(
+  const selectedCardIndexInFavArray = favoriteCharacters.findIndex(
     (eachCard) => eachCard.char_id === clickedCardId
   );
-  if (foundCardIndex === -1) {
+  if (selectedCardIndexInFavArray === -1) {
     favoriteCharacters.push(selectedCard);
-    paintFavCharacters();
+    paintFavList();
     setInLocalStorage(favoriteCharacters);
   } else {
     if (favoriteCharacters.length > 1) {
-      favoriteCharacters.splice(foundCardIndex, 1);
-      paintFavCharacters();
+      favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
+      paintFavList();
       setInLocalStorage(favoriteCharacters);
     } else {
-      favoriteCharacters.splice(foundCardIndex, 1);
+      favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
       favsSection.classList.add('collapsed');
-      localStorage.removeItem('');
+      localStorage.removeItem('Favorites');
     }
   }
 }
@@ -102,7 +100,7 @@ function handleSelection(ev) {
 // }
 
 //2.2. Manipulate NodeList
-function selectCardListener() {
+function selectedCardListener() {
   const cards = document.querySelectorAll('.js_card');
   cards.forEach((card) => {
     card.addEventListener('click', handleSelection);
