@@ -99,5 +99,6 @@ function paintCharacterList(cardArray) {
 getAPIinfo();
 
 home.addEventListener('click', () => {
+  searchInput.value = '';
   paintCharacterList(characters);
 });

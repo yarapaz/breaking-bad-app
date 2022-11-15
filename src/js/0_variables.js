@@ -9,6 +9,7 @@ const searchInput = document.querySelector('.js_search_input');
 const searchBtn = document.querySelector('.js_search_btn');
 const resetBtn = document.querySelector('.js_reset_btn');
 const home = document.querySelector('.js_home');
+const errorText = document.querySelector('.js_error_text');
 
 //Constants
 let characters = [];

@@ -6,10 +6,11 @@
 function handleSearch(ev) {
   ev.preventDefault();
   const inputValue = searchInput.value.toLowerCase();
+  const inputValidated = /^[a-zA-Z]+$/.exec(inputValue);
   searchedCharacters = characters.filter((eachCharacter) =>
-    eachCharacter.name.toLowerCase().includes(inputValue)
+    eachCharacter.name.toLowerCase().includes(inputValidated[0])
   );
-  paintCharacterList(searchedCharacters);
+  checkSearch();
 }
 
 function checkSearch() {
