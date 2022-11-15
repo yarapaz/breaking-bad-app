@@ -4,7 +4,6 @@
 
 //1. Filter method
 function handleSearch(ev) {
-  ev.preventDefault();
   const inputValue = searchInput.value.toLowerCase();
   const inputValidated = /^[a-zA-Z]+$/.exec(inputValue);
   searchedCharacters = characters.filter((eachCharacter) =>
