@@ -55,27 +55,30 @@ function handleSelection(ev) {
   const selectedCard = characters.find(
     (eachCharacter) => eachCharacter.char_id === clickedCardId
   );
-  const selectedCardIndexInFavArray = favoriteCharacters.findIndex(
-    (eachCard) => eachCard.char_id === clickedCardId
-  );
-  if (selectedCardIndexInFavArray === -1) {
-    favoriteCharacters.push(selectedCard);
-    paintFavList();
-    setInLocalStorage(favoriteCharacters);
-    checkSearch();
-  } else {
-    if (favoriteCharacters.length > 1) {
-      favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
-      paintFavList();
-      setInLocalStorage(favoriteCharacters);
-      checkSearch();
-    } else {
-      favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
-      favsSection.classList.add('collapsed');
-      localStorage.removeItem('Favorites');
-      checkSearch();
-    }
-  }
+
+  console.log(selectedCard.name);
+
+  // const selectedCardIndexInFavArray = favoriteCharacters.findIndex(
+  //   (eachCard) => eachCard.char_id === clickedCardId
+  // );
+  // if (selectedCardIndexInFavArray === -1) {
+  //   favoriteCharacters.push(selectedCard);
+  //   paintFavList();
+  //   setInLocalStorage(favoriteCharacters);
+  //   checkSearch();
+  // } else {
+  //   if (favoriteCharacters.length > 1) {
+  //     favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
+  //     paintFavList();
+  //     setInLocalStorage(favoriteCharacters);
+  //     checkSearch();
+  //   } else {
+  //     favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
+  //     favsSection.classList.add('collapsed');
+  //     localStorage.removeItem('Favorites');
+  //     checkSearch();
+  //   }
+  // }
 }
 
 //ADD FAVS - EVENTS

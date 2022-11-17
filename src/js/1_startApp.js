@@ -56,6 +56,17 @@ function renderCard(characterObj) {
   nameEl.classList.add('characters__name');
   nameEl.appendChild(nameContent);
 
+  const occupationListEl = document.createElement('ul');
+
+  for (let i = 0; i < characterObj.occupation.length; i++) {
+    const occupationEl = document.createElement('li');
+    const occupationContent = document.createTextNode(
+      characterObj.occupation[i]
+    );
+    occupationEl.appendChild(occupationContent);
+    occupationListEl.appendChild(occupationEl);
+  }
+
   const statusEl = document.createElement('h3');
   const statusContent = document.createTextNode(`${characterObj.status}`);
   statusEl.classList.add('characters__status');
@@ -63,6 +74,7 @@ function renderCard(characterObj) {
 
   articleEl.appendChild(imgEl);
   articleEl.appendChild(nameEl);
+  articleEl.appendChild(occupationListEl);
   articleEl.appendChild(statusEl);
   liEl.appendChild(articleEl);
   return liEl;
