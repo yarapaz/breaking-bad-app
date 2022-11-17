@@ -10,7 +10,7 @@ Just by clicking on the Github Pages link attached above in the description you 
 
 ![Breaking Bad Screenshot](./docs/assets/images/Breaking_bad_app_screenshot.jpg)
 
-- **See all characters and their status**: when loading the page you will be directly connected to the https://breakingbadapi.com/ that will show you on screen all Breaking Bad Characters, their names and their status.
+- **See all characters and their status**: when loading the page you will be directly connected to the https://breakingbadapi.com/ (created by **Tim Biles**, developer in the Dallas, Forth Worth area in Texas based on Breaking Bad TV show, created by Vince Gilligan, and originally aired on AMC) that will show you on screen all Breaking Bad Characters, their names and their status.
 
 * **Find your favorites**: using the search engine at the top of the page you will be able to travel all around characters to find your favorite ones (if a character had already been chosen as a favorite it will show up as selected).
 

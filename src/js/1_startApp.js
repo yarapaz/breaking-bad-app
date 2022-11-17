@@ -57,17 +57,19 @@ function renderCard(characterObj) {
   nameEl.appendChild(nameContent);
 
   const occupationListEl = document.createElement('ul');
+  occupationListEl.classList.add('characters__occupation_list');
 
   for (let i = 0; i < characterObj.occupation.length; i++) {
     const occupationEl = document.createElement('li');
     const occupationContent = document.createTextNode(
       characterObj.occupation[i]
     );
+    occupationEl.classList.add('characters__occupation_list__item');
     occupationEl.appendChild(occupationContent);
     occupationListEl.appendChild(occupationEl);
   }
 
-  const statusEl = document.createElement('h3');
+  const statusEl = document.createElement('p');
   const statusContent = document.createTextNode(`${characterObj.status}`);
   statusEl.classList.add('characters__status');
   statusEl.appendChild(statusContent);

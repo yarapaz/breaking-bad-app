@@ -74,6 +74,15 @@
       font-size: rem(16);
     }
   }
+  &__occupation_list {
+    margin-top: 5px;
+    text-align: center;
+    font-size: rem(13);
+    color: $subtitle-color;
+    &__item {
+      margin-bottom: 5px;
+    }
+  }
   &__status {
     font-weight: 600;
     color: $subtitle-color;
