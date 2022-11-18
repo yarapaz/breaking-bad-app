@@ -14,23 +14,33 @@ function handleSearch(ev) {
 
 function checkSearch() {
   if (searchedCharacters.length === 0) {
+    const noFavText = document.querySelector('.js_no_fav_text');
+    if (noFavText !== null) {
+      noFavText.remove();
+    }
+    errorMessage();
+    paintCharacterList(characters);
+  } else {
+    const errorText = document.querySelector('.js_error_text');
+    if (errorText !== null) {
+      errorText.remove();
+    }
+    const noFavText = document.querySelector('.js_no_fav_text');
+    if (noFavText !== null) {
+      noFavText.remove();
+    }
+    noFavoritesMessage();
+    paintCharacterList(searchedCharacters);
+  }
+}
+
+function checkIfSearch() {
+  if (searchedCharacters.length === 0) {
     paintCharacterList(characters);
   } else {
     paintCharacterList(searchedCharacters);
   }
 }
-
-//2. Fetch method (without fav cards arrangement)
-// function handleSearch(ev) {
-//   ev.preventDefault();
-//   const inputValue = searchInput.value.toLowerCase();
-//   fetch(`https://breakingbadapi.com/api/characters?name=${inputValue}`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       searchedCharacters = data;
-//       paintCharactersCards(searchedCharacters);
-//     });
-// }
 
 //SEARCH - EVENTS
 

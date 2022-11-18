@@ -77,8 +77,14 @@
   &__occupation_list {
     margin-top: 5px;
     text-align: center;
-    font-size: rem(13);
+    font-size: rem(6.5);
     color: $subtitle-color;
+    @include tablet {
+      font-size: rem(8);
+    }
+    @include desktop {
+      font-size: rem(13);
+    }
     &__item {
       margin-bottom: 5px;
     }

@@ -43,7 +43,7 @@
     background-color: $secondary-color;
     box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
     position: relative;
-    top: 15%;
+    top: 27%;
     @include tablet {
       height: 80px;
       top: 31%;
@@ -88,6 +88,38 @@
     }
     @include desktop {
       padding: 5.5px;
+    }
+  }
+  &__no_fav_text {
+    position: relative;
+    top: 34%;
+    text-align: center;
+    font-size: rem(10);
+    color: $subtitle-color;
+    font-weight: bold;
+    @include tablet {
+      top: 40%;
+      font-size: rem(14);
+    }
+    @include desktop {
+      top: 24%;
+      font-size: rem(14);
+    }
+  }
+  &__error_text {
+    position: relative;
+    top: 34%;
+    text-align: center;
+    font-size: rem(10);
+    color: $subtitle-color;
+    font-weight: bold;
+    @include tablet {
+      top: 40%;
+      font-size: rem(14);
+    }
+    @include desktop {
+      top: 24%;
+      font-size: rem(14);
     }
   }
 }

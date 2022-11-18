@@ -8,5 +8,7 @@ function getFromLocalStorage() {
   if (favListLS !== null) {
     favoriteCharacters = favListLS;
     paintFavList();
+  } else {
+    noFavoritesMessage();
   }
 }

@@ -8,12 +8,13 @@ function handleRemoveOne(ev) {
     favoriteCharacters.splice(objectIndex, 1);
     paintFavList();
     setInLocalStorage(favoriteCharacters);
-    checkSearch();
+    checkIfSearch();
   } else if (favoriteCharacters.length <= 1) {
     favoriteCharacters = [];
     localStorage.removeItem('Favorites');
     favsSection.classList.add('collapsed');
-    checkSearch();
+    noFavoritesMessage();
+    checkIfSearch();
   }
 }
 
@@ -21,7 +22,8 @@ function handleRemoveAll() {
   favoriteCharacters = [];
   localStorage.removeItem('Favorites');
   favsSection.classList.add('collapsed');
-  checkSearch();
+  noFavoritesMessage();
+  checkIfSearch();
 }
 
 //REMOVE FAVS - EVENTS

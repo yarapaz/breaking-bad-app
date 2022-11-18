@@ -46,6 +46,10 @@ function paintFavList() {
   for (let i = 0; i < favoriteCharacters.length; i++) {
     favsList.appendChild(renderFavCard(favoriteCharacters[i]));
   }
+  const noFavText = document.querySelector('.js_no_fav_text');
+  if (noFavText !== null) {
+    noFavText.remove();
+  }
   removeCardListener();
 }
 
@@ -65,44 +69,24 @@ function handleSelection(ev) {
     favoriteCharacters.push(selectedCard);
     paintFavList();
     setInLocalStorage(favoriteCharacters);
-    checkSearch();
+    checkIfSearch();
   } else {
     if (favoriteCharacters.length > 1) {
       favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
       paintFavList();
       setInLocalStorage(favoriteCharacters);
-      checkSearch();
     } else {
       favoriteCharacters.splice(selectedCardIndexInFavArray, 1);
       favsSection.classList.add('collapsed');
       localStorage.removeItem('Favorites');
-      checkSearch();
     }
+    checkIfSearch();
   }
 }
 
 //ADD FAVS - EVENTS
 
 //Add click events to cards
-
-//1. InnerHtml method
-// function cardListener() {
-//     const cards = document.querySelectorAll('.js_card');
-//     for (const card of cardsArray) {
-//       card.addEventListener('click', handleSelection);
-//     }
-//   }
-
-//2. Advanced DOM method
-
-//2.1. Manipulate ordinary Array
-// function cardListener() {
-//   const cards = document.querySelectorAll('.js_card');
-//   const cardsArray = Array.from(cards);
-//   for (const card of cardsArray) {
-//     card.addEventListener('click', handleSelection);
-//   }
-// }
 
 //2.2. Manipulate NodeList
 function selectedCardListener() {

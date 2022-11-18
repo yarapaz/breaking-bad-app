@@ -7,32 +7,27 @@ function getAPIinfo() {
   })
     .then((response) => response.json())
     .then((data) => {
-      characters = data;
+      characters = data.map((eachData) => {
+        const mappedData = {
+          char_id: eachData.char_id,
+          img: eachData.img,
+          name: eachData.name,
+          occupation: eachData.occupation,
+          status: eachData.status,
+        };
+        return mappedData;
+      });
       getFromLocalStorage();
       paintCharacterList(characters);
-    });
+    })
+    .catch((error) =>
+      console.log(
+        `¡Ups! Ha ocurrido un error ${error} al cargar los datos desde la API. Vuelva a intentarlo más tarde`
+      )
+    );
 }
 
 //Render character card & paint characters cards
-
-// 1. InnerHTML method
-
-// 1.1. Render Character Card
-// function renderCharacterCard(characterObj) {
-//   let cardHtml = '';
-//   cardHtml = `<li><article class="js_card" data-id="${characterObj.char_id}"><div class="characters__img" style="background-image:url('${characterObj.img}')"></div><h2>${characterObj.name}</h2><h3>${characterObj.status}</h3></article></li>`;
-//   return cardHtml;
-// }
-
-// 1.2. Paint Characters Cards
-// function paintCharactersCards(cardsArray) {
-//   let listHtml = '';
-//   for (let i = 0; i < cardsArray.length; i++) {
-//     listHtml += renderCharacterCard(cardsArray[i]);
-//   }
-//   charactersList.innerHTML = listHtml;
-//   cardListener();
-// }
 
 // 2. Advanced DOM method
 
@@ -107,6 +102,30 @@ function paintCharacterList(cardArray) {
   }
 }
 
+//Render error messages
+
+function noFavoritesMessage() {
+  const noFavEl = document.createElement('p');
+  const noFavContent = document.createTextNode(
+    'Todavía no tienes ningún favorito seleccionado'
+  );
+  noFavEl.classList.add('header__no_fav_text');
+  noFavEl.classList.add('js_no_fav_text');
+  noFavEl.appendChild(noFavContent);
+  header.appendChild(noFavEl);
+}
+
+function errorMessage() {
+  const errorEl = document.createElement('p');
+  const errorContent = document.createTextNode(
+    'El nombre introducido no existe. Introduzca un nombre válido, por favor'
+  );
+  errorEl.classList.add('header__error_text');
+  errorEl.classList.add('js_error_text');
+  errorEl.appendChild(errorContent);
+  header.appendChild(errorEl);
+}
+
 //START-APP - EVENTS
 
 //Get info from API and LS when app starts
@@ -114,5 +133,9 @@ getAPIinfo();
 
 home.addEventListener('click', () => {
   searchInput.value = '';
+  const errorText = document.querySelector('.js_error_text');
+  if (errorText !== null) {
+    errorText.remove();
+  }
   paintCharacterList(characters);
 });
