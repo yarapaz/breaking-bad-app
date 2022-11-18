@@ -3,7 +3,7 @@
 //HandleSearch
 
 //1. Filter method
-function handleSearch(ev) {
+function handleSearch() {
   const inputValue = searchInput.value.toLowerCase();
   const inputValidated = /^[a-zA-Z]+$/.exec(inputValue);
   searchedCharacters = characters.filter((eachCharacter) =>
@@ -18,18 +18,14 @@ function checkSearch() {
     if (noFavText !== null) {
       noFavText.remove();
     }
-    errorMessage();
+    searchErrorMessage();
     paintCharacterList(characters);
   } else {
     const errorText = document.querySelector('.js_error_text');
     if (errorText !== null) {
       errorText.remove();
+      noFavoritesMessage();
     }
-    const noFavText = document.querySelector('.js_no_fav_text');
-    if (noFavText !== null) {
-      noFavText.remove();
-    }
-    noFavoritesMessage();
     paintCharacterList(searchedCharacters);
   }
 }

@@ -115,7 +115,7 @@ function noFavoritesMessage() {
   header.appendChild(noFavEl);
 }
 
-function errorMessage() {
+function searchErrorMessage() {
   const errorEl = document.createElement('p');
   const errorContent = document.createTextNode(
     'El nombre introducido no existe. Introduzca un nombre válido, por favor'
