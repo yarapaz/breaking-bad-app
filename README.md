@@ -8,7 +8,7 @@ Just by clicking on the Github Pages link attached above in the description you 
 
 ## What can I do?
 
-![Breaking Bad Website](./docs/assets/images/Breaking-bad-website.jpg)
+![Breaking Bad Website](./docs/assets/images/breaking-bad-website.jpg)
 
 - **See all characters and their status**: when loading the page you will be directly connected to the https://breakingbadapi.com/ (created by **Tim Biles**, developer in the Dallas, Forth Worth area in Texas based on Breaking Bad TV show, created by Vince Gilligan, and originally aired on AMC) that will show you on screen all Breaking Bad Characters, their names and their status.
 
@@ -22,7 +22,7 @@ Just by clicking on the Github Pages link attached above in the description you 
 
 * **I don't like any of them anymore!**: If you decide to change radically your Breaking Bad favorite list, you can do it just by clicking on the "reset favorites" button at the bottom of the favorites list to eliminate all the favorites you have chosen so far.
 
-![Breaking Bad Favorites](./docs/assets/images/Breaking-bad-website-2.jpg)
+![Breaking Bad Favorites](./docs/assets/images/breaking-bad-website-2.jpg)
 
 ## Thanks for watching!
 
