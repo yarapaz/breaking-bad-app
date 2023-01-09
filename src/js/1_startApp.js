@@ -2,7 +2,7 @@
 
 //Get API info
 function getAPIinfo() {
-  fetch('https://www.breakingbadapi.com/api/characters', {
+  fetch('./assets/data/characters.json', {
     method: 'GET',
   })
     .then((response) => response.json())
