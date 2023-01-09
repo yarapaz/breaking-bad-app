@@ -43,7 +43,7 @@
     background-color: $secondary-color;
     box-shadow: 3px 10px 10px rgba(44, 43, 43, 0.2);
     position: relative;
-    top: 27%;
+    top: 29%;
     @include tablet {
       height: 80px;
       top: 31%;
@@ -52,7 +52,7 @@
       width: 920px;
       height: 90px;
       position: relative;
-      top: 17%;
+      top: 25%;
     }
   }
   &__search__input {
@@ -102,7 +102,7 @@
       font-size: rem(14);
     }
     @include desktop {
-      top: 24%;
+      top: 35%;
       font-size: rem(14);
     }
   }
@@ -118,7 +118,7 @@
       font-size: rem(14);
     }
     @include desktop {
-      top: 24%;
+      top: 35%;
       font-size: rem(14);
     }
   }
